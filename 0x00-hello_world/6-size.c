@@ -8,11 +8,11 @@
 
 int main(void)
 {
-	printf("The size of int datatype is: %lu bytes", sizeof(int));
-	printf("The size of char datatype is: %lu bytes", sizeof(char));
-	printf("The size of double datatype is: %lu bytes", sizeof(double));
-	printf("The size of float datatype is: %lu bytes", sizeof(float));
-	printf("The size of long datatype is: %lu bytes", sizeof(float));
-	printf("The size of long long datatype is: %lu bytes", sizeof(long long));
+	printf("Size of an int: %lu byte(s)", sizeof(int));
+	printf("Size of a char: %lu byte(s)", sizeof(char));
+	printf("Size of a double: %lu byte(s)", sizeof(double));
+	printf("Size of a float: %lu byte(s)", sizeof(float));
+	printf("Size of a long int: %lu byte(s)", sizeof(long));
+	printf("Size of a long long int: %lu byte(s)", sizeof(long long));
 	return (0);
 }
