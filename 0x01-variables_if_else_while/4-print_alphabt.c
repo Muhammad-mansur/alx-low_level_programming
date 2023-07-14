@@ -23,4 +23,5 @@ int main(void)
 	}
 
 	putchar('\n'); /* new line */
+	return (0);
 }
