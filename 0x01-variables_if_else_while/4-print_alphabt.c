@@ -20,6 +20,7 @@ int main(void)
 			putchar(alpha);
 		}
 
-		putchar('\n'); /* new line*/
 	}
+
+	putchar('\n'); /* new line */
 }
