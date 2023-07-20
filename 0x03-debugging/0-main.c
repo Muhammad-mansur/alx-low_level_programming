@@ -1,32 +1,16 @@
-#include <main.h>
-
-/* more headers goes there */
+#include "main.h"
 
 /**
-  * main - A program to print whether number
-  * stored in a variable is positive or negative
-  *
-  * Return: 0 (Success)
- */
+* main - tests function that prints if integer is positive or negative
+* Return: 0
+*/
 
 int main(void)
 {
-	int n;
+        int i;
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
+        i = 0;
+        positive_or_negative(i);
 
-	if (n > 0)
-	{
-		printf("%d is positive\n", n);
-	}
-	else if (n < 0)
-	{
-		printf("%d is negative\n", n);
-	}
-	else
-	{
-		printf("%d is zero\n", n);
-	}
-	return (0);
+        return (0);
 }
