@@ -1,4 +1,4 @@
-#include "main.h"
+i#include "main.h"
 
 /**
   * mul - function name
@@ -14,8 +14,5 @@
 
 int mul(int a, int b)
 {
-	int result;
-
-	result = a * b;
-	return(result);
+	return(a * b);
 }
