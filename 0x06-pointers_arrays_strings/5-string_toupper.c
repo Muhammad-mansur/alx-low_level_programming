@@ -3,6 +3,8 @@
 /**
   * string_toupper - function name
   *
+  * @str: string to change
+  *
   * Return: character
   */
 
