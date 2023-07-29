@@ -3,7 +3,7 @@
 /**
   * cap_string - function name
   *
-  * str: character pointer
+  * @str: character pointer
   *
   * Return: character
   */
