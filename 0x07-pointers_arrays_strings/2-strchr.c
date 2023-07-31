@@ -15,14 +15,20 @@ char *_strchr(char *s, char c)
 	{
 		if (*s == c)
 		{
+			/* found the character, return a pointer to it */
 			return (s);
 		}
 	}
 
 	if (*s == c)
 	{
+		/**
+		  *found the character at the null-terminator,
+		  * return a pointer to it.
+		  */
 		return (s);
 	}
 
+	/* if character is not found, return NULL */
 	return (NULL);
 }
