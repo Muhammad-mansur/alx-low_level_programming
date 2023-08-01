@@ -4,21 +4,29 @@
 /**
   * _strspn - Function that gets lenght of a prefix string
   *
-  * @s: ---
-  * @accept: ---
+  * @s: The string to be searched
+  * @accept: The prefix to be measured
   *
   * Return: 0
   */
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int a;
+	int i;
+	int byte = 0;
 
-	for (a = 0; a < accept; a++)
+	for (i = 0; accept[i]; i++)
 	{
-		if (*s != '\0' && accept != NULL)
+		if (*s == accept[i])
 		{
-			return (a);
+			byte++;
+			break;
+		}
+
+		else if (accept[i] == '\0')
+		{
+			return (byte);
 		}
 	}
+	return (i);
 }
