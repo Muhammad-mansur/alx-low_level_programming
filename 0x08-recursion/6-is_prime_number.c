@@ -10,15 +10,22 @@
 
 int is_prime_number(int n)
 {
-	if (n % 2 != 0 && 2 % n != 0)
-	{
-		return (1);
-	}
+	int i = 0;
 
-	else if (n % 2 == 0)
+	if (n < 2)
 	{
 		return (0);
 	}
 
-	return is_prime_number(n + 1);
+	else if (i == 1)
+	{
+		return (1);
+	}
+
+	else if (n % i == 0)
+	{
+		return (0);
+	}
+
+	return is_prime_number(n, i - 1);
 }
