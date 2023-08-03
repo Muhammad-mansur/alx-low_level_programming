@@ -1,13 +1,15 @@
 #include "main.h"
 
 /**
-  * _pow_recursion - function that returns the natural square
+  * _sqrt_recursion - function that returns the natural square
   * root of a number.
   *
   * @n: number
   *
   * Return: 0
   */
+
+int _check(int n, int x);
 
 int _sqrt_recursion(int n)
 {
@@ -16,10 +18,14 @@ int _sqrt_recursion(int n)
 		return (-1);
 	}
 
-	else if (n == 0 || n == 1)
-	{
-		return (n);
-	}
+	return _check(n, x);
+}
 
-	return (n * n +_sqrt_recursion(n + 1));
+int _check(int n, int x)
+{
+	x = 0;
+
+	x  = (x + n / x) / 2;
+
+	return _check(n, x + 1);
 }

@@ -8,24 +8,31 @@
   * Return: 0
   */
 
-int is_prime_number(int n)
+int prime(int n, int m);
+
+int prime(int n, int m)
 {
-	int i = 0;
+	int m;
 
 	if (n < 2)
 	{
 		return (0);
 	}
 
-	else if (i == 1)
+	else if (m == 1)
 	{
 		return (1);
 	}
 
-	else if (n % i == 0)
+	else if (n % m == 0)
 	{
 		return (0);
 	}
 
-	return is_prime_number(n, i - 1);
+	return prime(n, m - 1);
+}
+
+int prime_number(int n)
+{
+	return prime(n);
 }
