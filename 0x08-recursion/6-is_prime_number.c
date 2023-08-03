@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * prime - function to check if a number is prime using recursion
+  * _prime - function to check if a number is prime using recursion
   *
   * @n: The number to be checked
   * @m: The current divisor being tested
@@ -41,7 +41,7 @@ int is_prime_number(int n)
 		return (0);
 	}
 
-	m = n;
+	m = n - 1;
 
 	return (_prime(n, m));
 }
