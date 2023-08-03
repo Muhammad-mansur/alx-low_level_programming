@@ -8,18 +8,9 @@
   * Return: 0
   */
 
-int prime(int n, int m);
-
 int prime(int n, int m)
 {
-	int m;
-
-	if (n < 2)
-	{
-		return (0);
-	}
-
-	else if (m == 1)
+	if (m == 1)
 	{
 		return (1);
 	}
@@ -29,10 +20,17 @@ int prime(int n, int m)
 		return (0);
 	}
 
-	return prime(n, m - 1);
+	return prime(n, m + 1);
 }
 
 int prime_number(int n)
 {
-	return prime(n);
+	int m = 1;
+
+	if (n < 2)
+	{
+		return (0);
+	}
+
+	return prime(n, m);
 }
