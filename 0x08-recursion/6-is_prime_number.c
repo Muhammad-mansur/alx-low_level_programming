@@ -1,14 +1,15 @@
 #include "main.h"
 
 /**
-  * is_prime_number - function to check if a number is prime or not
+  * prime - function to check if a number is prime using recursion
   *
-  * @n: input
+  * @n: The number to be checked
+  * @m: The current divisor being tested
   *
-  * Return: 0
+  * Return: 1 if the number is prime, otherwise return 0
   */
 
-int prime(int n, int m)
+int _prime(int n, int m)
 {
 	if (m == 1)
 	{
@@ -20,17 +21,27 @@ int prime(int n, int m)
 		return (0);
 	}
 
-	return prime(n, m + 1);
+	return (_prime(n, m - 1));
 }
 
-int prime_number(int n)
+/**
+  * is_prime_number - function to check if a number is prime or not
+  *
+  * @n: input
+  *
+  * Return: 1 if the number is prime, otherwise return 0
+  */
+
+int is_prime_number(int n)
 {
-	int m = 1;
+	int m;
 
 	if (n < 2)
 	{
 		return (0);
 	}
 
-	return prime(n, m);
+	m = n;
+
+	return (_prime(n, m));
 }
