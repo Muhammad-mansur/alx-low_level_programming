@@ -9,7 +9,12 @@
   * Return: 0
   */
 
-int _check(int n, int x);
+int _check(int n, int x)
+{
+	x = (x + n / x) / 2;
+
+	return _check(n, x);
+}
 
 int _sqrt_recursion(int n)
 {
@@ -19,13 +24,4 @@ int _sqrt_recursion(int n)
 	}
 
 	return _check(n, x);
-}
-
-int _check(int n, int x)
-{
-	x = 0;
-
-	x  = (x + n / x) / 2;
-
-	return _check(n, x + 1);
 }
