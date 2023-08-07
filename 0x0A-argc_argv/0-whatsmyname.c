@@ -9,17 +9,9 @@
   * Return: 0
   */
 
-int main(int argc, char *argv[])
+int main(int argc __attribute__((unused)), char *argv[])
 {
-	int name;
-
-	if (argc == 0)
-	{
-		for (name = 0; name < argc; name++)
-		{
-			printf("argv[%d] = %s\n", name, argv[name]);
-		}
-	}
+	printf("%s\n", argv[0]);
 
 	return (0);
 }
