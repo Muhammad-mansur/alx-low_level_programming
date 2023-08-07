@@ -9,14 +9,12 @@
   * Return: 0
   */
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[] __attribute__((unused)))
 {
 	int n;
 
-	for (n = 1; n < argc; n++)
-	{
-		printf("%s\n", argv[n]);
-	}
+	n = argc - 1;
+	printf("%d\n", n);
 
 	return (0);
 }
