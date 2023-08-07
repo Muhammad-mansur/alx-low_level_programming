@@ -11,11 +11,10 @@
 
 int main(int argc, char *argv[])
 {
-	int a, b, c;
+	int a, b;
 
 	a = (atoi(argv[1]));
 	b = (atoi(argv[2]));
-	c = a * b;
 
 	if (argc != 3)
 	{
@@ -25,7 +24,7 @@ int main(int argc, char *argv[])
 
 	else
 	{
-		printf("%d\n", c);
+		printf("%d\n", a * b);
 	}
 
 	return (0);
