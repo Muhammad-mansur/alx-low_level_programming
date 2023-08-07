@@ -11,11 +11,6 @@
 
 int main(int argc, char *argv[])
 {
-	int a, b;
-
-	a = (atoi(argv[1]));
-	b = (atoi(argv[2]));
-
 	if (argc != 3)
 	{
 		printf("Error\n");
@@ -24,7 +19,7 @@ int main(int argc, char *argv[])
 
 	else
 	{
-		printf("%d\n", a * b);
+		printf("%d\n", (atoi(argv[1])) * (atoi(argv[2])));
 	}
 
 	return (0);
