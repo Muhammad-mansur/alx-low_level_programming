@@ -12,14 +12,17 @@
 
 int main(int argc, char *argv[])
 {
-	int a = 0;
+	(void) argc;
+	int a;
 
-	if (argc > 0)
+	a = 0;
+
+	if (a > 0)
 	{
 		printf("%d\n", (atoi(argv[a])));
 	}
 
-	else if (argc == 1)
+	if (a == 1)
 	{
 		printf("0\n");
 	}
