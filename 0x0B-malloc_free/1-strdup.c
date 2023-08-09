@@ -1,13 +1,18 @@
 #include "main.h"
 
 /**
- */
+  * _strdup - string duplicate function
+  *
+  * @str: str to be copied
+  *
+  * Return: character
+  */
 
 char *_strdup(char *str)
 {
-	char *strr;
+	char *strr = 0;
 	unsigned int size = 0;
-	int i;
+	unsigned int i;
 
 	if (str == NULL)
 	{
@@ -17,8 +22,10 @@ char *_strdup(char *str)
 	/* calculate the length of the input string */
 	for (; str[size] != '\0'; size++)
 	
-	/* Allocate memory for the duplicate string and add 1 for the null terminator */
-	char *strr = (char *)malloc((size + 1) * sizeof(char));
+	/** Allocate memory for the duplicate string
+	 * and add 1 for the null terminator
+	 */
+	strr = (char *)malloc((size + 1) * sizeof(char));
 
 	if (strr == NULL)
 	{
