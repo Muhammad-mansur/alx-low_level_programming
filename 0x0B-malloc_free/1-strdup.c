@@ -5,20 +5,33 @@
 
 char *_strdup(char *str)
 {
+	char *strr;
 	unsigned int size = 0;
+	int i;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 
-	char *strr = str;
-
-	strr = (char *)malloc(size * sizeof(char));
+	/* calculate the length of the input string */
+	for (; str[size] != '\0'; size++)
+	
+	/* Allocate memory for the duplicate string and add 1 for the null terminator */
+	char *strr = (char *)malloc((size + 1) * sizeof(char));
 
 	if (strr == NULL)
 	{
 		return (NULL);
+	}
+
+	/**
+	  * copy the characters from the input string to the
+	  * duplicate string
+	  */
+	for (i = 0; i < size; i++)
+	{
+		strr[i] = str[i];
 	}
 
 	return (strr);
