@@ -11,8 +11,8 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int a, b;
-	unsigned int L1 = 0, L2 = 0;
+	int a, b;
+	int L1 = 0, L2 = 0;
 	char *m;
 
 	/* calculate the lengths of the strings */
@@ -43,7 +43,7 @@ char *str_concat(char *s1, char *s2)
 	}
 	for (b = 0; b < L2; b++)
 	{
-		m[b] = s2[b];
+		m[a + b] = s2[b];
 	}
 
 	/* Null termination of the concatenated string */
