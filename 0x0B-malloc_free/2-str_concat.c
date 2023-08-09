@@ -20,7 +20,7 @@ char *str_concat(char *s1, char *s2)
 	L2 = strlen(s2);
 
 	/* Allocate memory for the concatenated string */
-	m = (char *)malloc(L1 + L2 * sizeof(char));
+	m = (char *)malloc((L1 + L2 + 1) * sizeof(char));
 	if (m == NULL)
 	{
 		return (NULL);
