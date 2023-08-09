@@ -15,6 +15,16 @@ char *str_concat(char *s1, char *s2)
 	int L1 = 0, L2 = 0;
 	char *m;
 
+	/* HANDLING NULL strings */
+	if (s1 == NULL)
+	{
+		s2 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
+
 	/* calculate the lengths of the strings */
 	L1 = strlen(s1);
 	L2 = strlen(s2);
@@ -24,16 +34,6 @@ char *str_concat(char *s1, char *s2)
 	if (m == NULL)
 	{
 		return (NULL);
-	}
-
-	/* Handle NULL strings */
-	if (s1 == NULL)
-	{
-		s1 = "";
-	}
-	if (s2 == NULL)
-	{
-		s2 = "";
 	}
 
 	/* copy the content of s1 and s2 into m */
