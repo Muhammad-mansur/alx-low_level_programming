@@ -20,7 +20,7 @@ char *_strdup(char *str)
 	}
 
 	/* calculate the length of the input string */
-	for (; str[size] != '\0'; size++)
+	size = strlen(str);
 
 	/* Allocate memory for the duplicate string */
 	/* and add 1 for the null terminator */

@@ -1,6 +1,7 @@
 #ifndef KEN_HEADER
 #define KEN_HEADER
 
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
