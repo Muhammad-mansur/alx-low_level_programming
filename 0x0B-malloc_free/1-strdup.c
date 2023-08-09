@@ -3,7 +3,7 @@
 /**
   * _strdup - string duplicate function
   *
-  * @str: str to be copied
+  * @str: str to duplicate
   *
   * Return: character
   */
@@ -13,6 +13,7 @@ char *_strdup(char *str)
 	char *strr;
 	unsigned int size = 0;
 	unsigned int i;
+
 	if (str == NULL)
 	{
 		return (NULL);
