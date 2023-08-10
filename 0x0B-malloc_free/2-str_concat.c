@@ -50,7 +50,7 @@ char *str_concat(char *s1, char *s2)
 
 	/* Null termination of the concatenated string */
 
-	m[a + b] = '\0';
+	m[L1 + L2] = '\0';
 
 	return (m);
 }
