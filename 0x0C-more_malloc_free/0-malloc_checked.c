@@ -1,14 +1,18 @@
 #include "main.h"
 
 /**
+  * malloc_checked - A function that allocates memory using malloc
+  *
+  * @b: allocated memory
+  *
+  * Return: void
   */
 
 void *malloc_checked(unsigned int b)
 {
-	(void) b;
-	int *c;
+	void *c;
 
-	c = (int *)malloc(sizeof(int));
+	c = malloc(b);
 
 	if (c == NULL)
 	{
