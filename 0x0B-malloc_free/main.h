@@ -1,5 +1,5 @@
-#ifndef KEN_HEADER
-#define KEN_HEADER
+#ifndef HEADER_FILE
+#define HEADER_FREE
 
 #include <string.h>
 #include <stdio.h>
