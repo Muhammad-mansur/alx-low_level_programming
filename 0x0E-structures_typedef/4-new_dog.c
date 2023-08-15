@@ -27,6 +27,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
+	dog->age = age;
+
 	/* Memory allocation for dog owner */
 	dog->owner = malloc(sizeof(owner));
 	if (owner == NULL)
@@ -39,8 +41,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	/* Store a copy of name and owner */
 	strcpy(dog->name, name);
 	strcpy(dog->owner, owner);
-
-	dog->age = age;
 
 	return (dog);
 }
