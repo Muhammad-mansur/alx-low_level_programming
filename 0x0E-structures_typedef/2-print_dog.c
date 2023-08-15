@@ -5,16 +5,16 @@
 
 void print_dog(struct dog *d)
 {
-	struct dog
-	{
-		char name;
-		int age;
-		char owner;
-	};
 
-	if (name == NULL || age == NULL || owner == NULL)
+	if (d->name == NULL || d->age == NULL || d->owner == NULL)
 	{
 		printf("nil");
+	}
+	else
+	{
+		printf("Name: %s\n", d->name);
+		printf("Age: %s\n", d->age);
+		printf("Owner: %s\n", d->owner);
 	}
 
 	if (d == NULL)
