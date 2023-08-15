@@ -20,7 +20,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	/* Memory allocation for dog name */
-	dog->name = malloc(sizeof(name));
+	dog->name = malloc(strlen(name) + 1);
 	if (name == NULL)
 	{
 		free(dog);
@@ -30,7 +30,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog->age = age;
 
 	/* Memory allocation for dog owner */
-	dog->owner = malloc(sizeof(owner));
+	dog->owner = malloc(strlen(owner) + 1);
 	if (owner == NULL)
 	{
 		free(dog->name);
