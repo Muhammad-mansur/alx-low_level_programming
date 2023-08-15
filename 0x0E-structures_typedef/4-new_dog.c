@@ -16,6 +16,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	/* Return NULL if memory allocation fails */
 	if (dog == NULL)
 	{
+		free (dog);
 		return (NULL);
 	}
 
