@@ -1,6 +1,9 @@
 #include "dog.h"
 
 /**
+  * print_dog - function
+  * @d: dog's location info
+  * Return: 0
   */
 
 void print_dog(struct dog *d)
@@ -10,14 +13,14 @@ void print_dog(struct dog *d)
 		return;
 	}
 
-	if (d->name == NULL || d->age == NULL || d->owner == NULL)
+	if (d->name == NULL || d->owner == NULL)
 	{
 		printf("nil");
 	}
 	else
 	{
 		printf("Name: %s\n", d->name);
-		printf("Age: %s\n", d->age);
+		printf("Age: %f\n", d->age);
 		printf("Owner: %s\n", d->owner);
 	}
 }
