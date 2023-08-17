@@ -12,7 +12,7 @@ void print_all(const char * const format, ...)
 {
 	va_list arg;
 	char *s;
-	int separator = 0, i = 0;
+	int i = 0;
 
 	va_start(arg, format);
 
@@ -34,15 +34,14 @@ void print_all(const char * const format, ...)
 				if (s == NULL)
 				{
 					s = "(nil)";
-					printf("%s", s);
 				}
+				printf("%s", s);
 				break;
 			default:
-				separator = 1;
-				break;
+				continue;
 		}
 		
-		if (format[i + 1] && separator == 0)
+		if (format[i])
 		{
 			printf(", ");
 		}
