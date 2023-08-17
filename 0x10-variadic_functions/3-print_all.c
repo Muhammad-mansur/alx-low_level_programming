@@ -41,13 +41,16 @@ void print_all(const char * const format, ...)
 				continue;
 		}
 		
-		if (format[i])
+		if (format[i + 1])
 		{
 			printf(", ");
 		}
+
 		i++;
 	}
-	va_end(arg);
+
 	printf("\n");
+
+	va_end(arg);
 
 }
