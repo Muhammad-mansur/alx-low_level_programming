@@ -1,14 +1,14 @@
 section .data
-    format db "Hello, Holberton",10,0  ; The format string for printf
+    hello db "Hello, Holberton",10,0  ; The string to print with a newline character (10)
 
 section .text
     global main
     extern printf
 
 main:
-    ; Push format string onto the stack
-    push rdi                     ; Clear rdi to align the stack
-    lea rdi, [format]
+    ; Push the address of the format string onto the stack
+    push rdi
+    lea rdi, [hello]
 
     ; Call printf
     call printf
