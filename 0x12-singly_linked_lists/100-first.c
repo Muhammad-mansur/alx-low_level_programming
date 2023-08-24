@@ -1,11 +1,13 @@
 #include "lists.h"
 
+void f(void) __attribute__ ((constructor));
+
 /**
-  * first - entry point
+  * f - entry point
   * Return: nothing
   */
 
-void first(void)
+void f(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
 	printf("I bore my house upon my back!\n");
