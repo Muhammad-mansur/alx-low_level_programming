@@ -1,22 +1,23 @@
-	segment	.data
-	output	db	"Hello, Holberton"
-	line	db	"", 	0xa
-	segment	.text
-	global	main	
+section .data
+    hello db "Hello, Holberton",10,0  ; The string to print with a newline character (10)
+
+section .text
+    global main
+    extern printf
 
 main:
-	mov	rax,	1
-	mov 	rdi,	1
-	mov 	rsi, 	output
-	mov	rdx, 	16
-	syscall
+    ; Push the address of the format string onto the stack
+    push rdi
+    lea rdi, [hello]
 
-	mov	rax,	1
-	mov 	rdi,	1
-	mov 	rsi,	line
-	mov	rdx,	1
-	syscall
+    ; Call printf
+    call printf
 
-	mov 	rax, 	60
-	xor	rdi, 	rdi
-	syscall
+    ; Clean up the stack
+    add rsp, 8
+
+    ; Exit the program
+    mov rax, 60                  ; syscall number for exit (60)
+    xor rdi, rdi                 ; exit status: 0
+    syscall
+
