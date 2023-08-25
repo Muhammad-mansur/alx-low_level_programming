@@ -10,7 +10,7 @@
 
 int main(int argc, char *argv[])
 {
-	int cents;
+	int cents, coin_v[], coin_no, a, cnt = 0;
 
 	if (argc != 2)
 	{
@@ -24,6 +24,20 @@ int main(int argc, char *argv[])
 	{
 		printf("0\n");
 	}
+
+	coin_v[] = {25, 10, 5, 2, 1};
+	coin_no = sizeof(coin_v) / sizeof(coin_v[0]);
+
+	for (a = 0; a < coin_no; a++)
+	{
+		while (cents >= coin_v[a])
+		{
+			cents = cents - coin_v[a];
+			cnt++;
+		}
+	}
+
+	printf("%d\n", cnt);
 
 	return (0);
 }
