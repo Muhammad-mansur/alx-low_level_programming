@@ -1,18 +1,17 @@
 section .data
-    hello db "Hello, Holberton",10,0  ; The format string for printf
+    hello db "Hello, Holberton", 10, 0
 
 section .text
     global main
-    extern printf
 
 main:
-    push rdi
-    mov rdi, hello             ; Load the format string into rdi
-    call printf                ; Call printf
-    pop rdi
+    mov rax, 1                  ; syscall number for sys_write
+    mov rdi, 1                  ; file descriptor 1 (stdout)
+    lea rsi, [hello]            ; address of the hello message
+    mov rdx, 17                 ; message length
+    syscall                     ; invoke syscall to write message
 
-    ; Exit the program
-    mov rax, 60                ; syscall number for exit (60)
-    xor rdi, rdi               ; exit status: 0
-    syscall                    ; Invoke syscall to exit
+    mov rax, 60                 ; syscall number for sys_exit
+    xor rdi, rdi                ; exit status: 0
+    syscall                     ; invoke syscall to exit
 
