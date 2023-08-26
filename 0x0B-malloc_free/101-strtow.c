@@ -51,3 +51,25 @@ char **strtow(char *str)
 	array[n_words] = NULL;
 	return (array);
 }
+
+/**
+  * free_array - funcion to fee memory allocated for array
+  * @array: array
+  * Return: Nothing
+  */
+
+void free_array(char **array)
+{
+	int a;
+
+	if (array == NULL)
+	{
+		return;
+	}
+
+	for (a = 0; array[a] != NULL; a++)
+	{
+		free(array[a]);
+	}
+	free(array);
+}
