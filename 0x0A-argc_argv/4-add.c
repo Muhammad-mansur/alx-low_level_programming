@@ -12,26 +12,28 @@
 
 int main(int argc, char *argv[])
 {
-	(void) argc;
-	int a;
+	int s = 0, a, nmb;
 
-	a = 0;
-
-	if (a > 0)
-	{
-		printf("%d\n", (atoi(argv[a])));
-	}
-
-	if (a == 1)
+	if (argc < 2)
 	{
 		printf("0\n");
+		return (0);
 	}
 
-	else
+	for (a = 1; a < argc; a++)
 	{
-		printf("Error\n");
-		return (1);
+		nmb = atoi(argv[a]);
+
+		if (nmb <= 0)
+		{
+			printf("Error\n");
+			return (1);
+		}
+
+		s = s + nmb;
 	}
+
+	printf("%d\n", s);
 
 	return (0);
 }
