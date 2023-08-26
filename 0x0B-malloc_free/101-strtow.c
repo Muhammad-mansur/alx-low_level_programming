@@ -11,8 +11,15 @@ char **strtow(char *str)
 	int n_words, a, b;
 	char *tok;
 	char **array;
+	char *str_copy;
 
 	if (str == NULL || *str == '\0')
+	{
+		return (NULL);
+	}
+	/* Make a copy of the input string */
+	str_copy = strdup(str);
+	if (str_copy = NULL)
 	{
 		return (NULL);
 	}
