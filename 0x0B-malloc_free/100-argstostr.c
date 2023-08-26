@@ -39,7 +39,7 @@ char *argstostr(int ac, char **av)
 		if (av[a] != NULL)
 		{
 			arg_len = strlen(av[a]);
-			strcpy(rlt + c_index, av[a]);
+			strncpy(rlt + c_index, av[a], arg_len);
 			c_index += strlen(av[a]);
 			rlt[c_index] = '\n';
 			c_index++;
