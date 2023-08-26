@@ -46,9 +46,7 @@ char *argstostr(int ac, char **av)
 			c_index++;
 		}
 	}
-
 	/* Null terminate the concat strng */
 	rlt[c_index] = '\0';
-
 	return (rlt);
 }
