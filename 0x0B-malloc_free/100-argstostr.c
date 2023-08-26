@@ -9,7 +9,7 @@
 
 char *argstostr(int ac, char **av)
 {
-	int t_length = 0, a, c_index, arg_len;
+	int t_length = 0, a, c_index;
 	char *rlt;
 
 	if (ac == 0 || av == NULL)
@@ -38,8 +38,7 @@ char *argstostr(int ac, char **av)
 	{
 		if (av[a] != NULL)
 		{
-			arg_len = strlen(av[a]);
-			strncpy(rlt + c_index, av[a], arg_len);
+			strcpy(rlt + c_index, av[a]);
 			c_index += strlen(av[a]);
 			rlt[c_index] = '\n';
 			c_index++;
