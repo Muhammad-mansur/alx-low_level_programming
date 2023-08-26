@@ -1,82 +1,44 @@
 #include "main.h"
 
+
 /**
-  * strtow - function that splits a string into words.
-  * @str: string to be split
-  * Return: NULL
-  */
+ * strtow - function that splits a string into words.
+ * @str: string to be split
+ * Return: pointer to an array of strings (words)
+ */
 
 char **strtow(char *str)
 {
-	int n_words, a, b;
-	char *tok;
-	char **array;
-	char *str_copy;
+    int num_words = 0, i = 0;
+    char **words = NULL, *token = strtok(str, " ");
 
-	if (str == NULL || *str == '\0')
-	{
-		return (NULL);
-	}
-	/* Make a copy of the input string */
-	str_copy = strdup(str);
-	if (str_copy = NULL)
-	{
-		return (NULL);
-	}
-	/* count no of words */
-	n_words = 0;
-	tok = strtok(str, " ");
-	while (tok != NULL)
-	{
-		n_words++;
-		tok = strtok(NULL, " ");
-	}
-	/* Memory allocation for the array of strings */
-	array = (char **)malloc((n_words + 1) * sizeof(char *));
-	if (array == NULL)
-	{
-		return (NULL);
-	}
-	/* Split string into words and copy them */
-	tok = strtok(str, " ");
-	a = 0;
-	while (tok != NULL)
-	{
-		array[a] = strdup(tok);
-		if (array[a] == NULL)
-		{
-			for (b = 0; b < a; b++)
-			{
-				free(array[b]);
-			}
-			free(array);
-			return (NULL);
-		}
-		a++;
-		tok = strtok(NULL, " ");
-	}
-	array[n_words] = NULL;
-	return (array);
-}
+    if (!str || !*str)
+        return (NULL);
 
-/**
-  * free_array - funcion to fee memory allocated for array
-  * @array: array
-  * Return: Nothing
-  */
+    while (token)
+    {
+        num_words++;
+        token = strtok(NULL, " ");
+    }
 
-void free_array(char **array)
-{
-	int a;
+    words = (char **)malloc((num_words + 1) * sizeof(char *));
+    if (!words)
+        return (NULL);
 
-	if (array == NULL)
-	{
-		return;
-	}
+    token = strtok(str, " ");
+    while (token)
+    {
+        words[i++] = strdup(token);
+        if (!words[i - 1])
+        {
+            while (--i >= 0)
+                free(words[i]);
+            free(words);
+            return (NULL);
+        }
+        token = strtok(NULL, " ");
+    }
 
-	for (a = 0; array[a] != NULL; a++)
-	{
-		free(array[a]);
-	}
-	free(array);
+    words[i] = NULL;
+    return (words);
 }
