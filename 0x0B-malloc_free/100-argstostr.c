@@ -9,7 +9,7 @@
 
 char *argstostr(int ac, char **av)
 {
-	int t_length = 0, a, c_index;
+	int t_length, a, c_index;
 	char *rlt;
 
 	if (ac == 0 || av == NULL)
@@ -18,6 +18,7 @@ char *argstostr(int ac, char **av)
 	}
 
 	/* Calculate total length of concat string */
+	t_length = 0;
 	for (a = 0; a < ac; a++)
 	{
 		if (av[a] != NULL)
@@ -34,6 +35,7 @@ char *argstostr(int ac, char **av)
 	}
 
 	/* concat all arguments and newline characters */
+	c_index = 0;
 	for (a = 0; a < ac; a++)
 	{
 		if (av[a] != NULL)
