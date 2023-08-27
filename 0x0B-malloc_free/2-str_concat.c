@@ -17,7 +17,7 @@ char *str_concat(char *s1, char *s2)
 
 	/* HANDLING NULL strings */
 	if (s1 == NULL)
-		s2 = "";
+		s1 = "";
 
 	if (s2 == NULL)
 		s2 = "";
@@ -37,7 +37,7 @@ char *str_concat(char *s1, char *s2)
 
 	a = 0;
 	for (b = 0; b < L2; b++)
-		m[a + b] = s2[b];
+		m[a++] = s2[b];
 
 	/* Null termination of the concatenated string */
 
