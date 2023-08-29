@@ -8,14 +8,14 @@
 
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *nt, *p = NULL;
+	listint_t *next, *p = NULL;
 
 	while (*head)
 	{
-		nt = (*head)->next;
-		(*head)->n = p;
+		next = (*head)->next;
+		(*head)->next = p;
 		p = *head;
-		*head = nt;
+		*head = next;
 	}
 
 	*head = p;
