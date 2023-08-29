@@ -8,6 +8,7 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t cnt = 0;
+
 	while (head)
 	{
 		cnt++;
