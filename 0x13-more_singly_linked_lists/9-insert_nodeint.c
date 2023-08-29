@@ -4,7 +4,7 @@
   * insert_nodeint_at_index - inserts a new node at a given position
   *
   * @head: pointer to the address of the head of the list
-  * @idex: index of the list where the new node should be added
+  * @idx: index of the list where the new node should be added
   * @n: data value to be assigned to the new node
   *
   * Return: The address of the new node or NULL if it failed
