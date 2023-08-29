@@ -8,35 +8,44 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
+	const listint_t *low, *high;
 	size_t cnt = 0;
-	const listint_t *present = head;
-	const listint_t *printed[1024];
 
-	while (present != NULL)
+	if (head == NULL)
 	{
-		size_t idx = 0;
-		int dup = 0;
-
-		for (idx = 0; idx < cnt; idx++)
-		{
-			if (printed[idx] == present)
-			{
-				dup = 1;
-				break;
-			}
-		}
-
-		printf("[%p] %d\n", (void *)present, present->n);
-
-		if (dup)
-		{
-			printf("-> [%p] %d\n", (void *)present, present->n);
-			return (cnt);
-		}
-
-		printed[cnt++] = present;
-		present = present->next;
+		exit(98);
 	}
 
+	low = head;
+	high = (head->next) ? head->next : NULL;
+
+	while (high && high->next)
+	{
+		if (high == low)
+		{
+			high = head;
+
+			while (high != low)
+			{
+				printf("[%p] %d\n", (void *)high, high->n);
+				cnt++;
+				high = high->next;
+				low = low->next;
+			}
+
+			printf("[%p] %d\n", (void *)high, high->n);
+			cnt++;
+			return (cnt);
+		}
+		low = low->next;
+		high = (high->next) ? high->next->next : NULL;
+		cnt++;
+	}
+	do
+	{
+		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
+	}
+	while (head);
 	return (cnt);
 }
