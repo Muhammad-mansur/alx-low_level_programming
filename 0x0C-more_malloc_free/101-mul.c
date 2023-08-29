@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 
 	if (is_digit(argv[1]) == 0 || is_digit(argv[2]) == 0)
 	{
-		printf("Errot\n");
+		printf("Error\n");
 		exit(98);
 	}
 
