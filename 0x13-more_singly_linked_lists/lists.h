@@ -1,6 +1,10 @@
 #ifndef main_h
 #define main_h
 
+#include <stdio.h>
+#include <stddef.h>
+#include <stdlib.h>
+
 /**
  * struct listint_s - singly linked list
  * @n: integer
@@ -9,10 +13,6 @@
  * Description: singly linked list node structure
  * 
  */
-
-#include <stdio.h>
-#include <stddef.h>
-#include <stdlib.h>
 
 typedef struct listint_s
 {
