@@ -13,7 +13,7 @@ int is_digit(char *p)
 {
 	int a;
 
-	for (a = 0; a != '\0'; a++)
+	for (a = 0; p[a] != '\0'; a++)
 	{
 		if (p[a] < '0' || p[a] > '9')
 		{
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 	num2 = atoi(argv[2]);
 
 	mul = num1 * num2;
-	return (mul);
+	printf("%d\n", mul);
 
 	return (0);
 }
