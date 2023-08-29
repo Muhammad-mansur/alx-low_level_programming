@@ -12,13 +12,8 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *present = head;
 	const listint_t *printed[1024];
 
-	while (present)
+	while (present != NULL)
 	{
-		if (present == NULL)
-		{
-			break;
-		}
-
 		for (idx = 0; idx < cnt; idx++)
 		{
 			if (printed[idx] == present)
