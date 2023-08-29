@@ -20,21 +20,16 @@ size_t free_listint_safe(listint_t **h)
 	{
 		cnt++;
 
-		if ((*h - (*h)->next) > 0)
-		{
-			tmp = (*h)->next;
-			*h = tmp;
-		}
+		tmp = (*h)->next;
+		free(*h);
+		*h = tmp;
 
-		else
+		if (*h == tmp)
 		{
-			h = NULL;
+			*h = NULL;
 			break;
 		}
 	}
-
-	*h = NULL;
-	h = NULL;
 
 	return (cnt);
 }
