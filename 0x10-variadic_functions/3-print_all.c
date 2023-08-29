@@ -30,26 +30,24 @@ void print_all(const char * const format, ...)
 				printf("%s%f", sep, va_arg(arg, double));
 				break;
 			case 's':
-				s = va_arg(arg, char *);
-				if (s == NULL)
 				{
-					printf("%s(nil)", sep);
-				}
-				else
-				{
-					printf("%s%s", sep, s);
+					s = va_arg(arg, char *);
+					if (s == NULL)
+					{
+						printf("%s(nil)", sep);
+					}
+					else
+					{
+						printf("%s%s", sep, s);
+					}
 				}
 				break;
 			default:
 				break;
 		}
-
 		sep = ", ";
 		a++;
 	}
-
-	printf("\n");
-
 	va_end(arg);
-
+	printf("\n");
 }
