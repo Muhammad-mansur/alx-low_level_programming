@@ -24,13 +24,13 @@ size_t print_listint_safe(const listint_t *head)
 			if (printed[idx] == present)
 			{
 				printf(" [%p] %d\n", (void *)present, present->n);
+				return (cnt);
 			}
 		}
 
 		printed[cnt++] = present;
 		printf("[%p] %d\n", (void *)present, present->n);
 		present = present->next;
-		cnt++;
 	}
 
 	return (cnt);
