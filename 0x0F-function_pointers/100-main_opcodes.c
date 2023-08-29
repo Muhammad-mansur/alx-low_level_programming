@@ -1,6 +1,10 @@
 #include "function_pointers.h"
 
 /**
+  * main - entry poiint
+  * @argc: argument count
+  * @argv: argument vector
+  * Return: 0
   */
 
 int main(int argc, char *argv[])
@@ -25,10 +29,10 @@ int main(int argc, char *argv[])
 
 	main_ptr = (unsigned char *)main;
 
-	for (a = 0; a <bytes; a++)
+	for (a = 0; a < bytes; a++)
 	{
 		printf("%02x", main_ptr[a]);
-		if(a < bytes - 1)
+		if (a < bytes - 1)
 		{
 			printf(" ");
 		}
