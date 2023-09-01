@@ -2,7 +2,9 @@
 
 /**
   * binary_to_unit - converts a binary number to an unsigned int
-  * @b: pointer
+  *
+  * @b: pointer to 0 and 1
+  *
   * Return: the converted number or 0
   */
 
