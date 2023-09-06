@@ -15,7 +15,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	char buff[1024];
-	ssize_t total_count = 0, bytes_print, bytes_read, bytes_w;
+	ssize_t total_count = 0, bytes_print, bytes_read = 0, bytes_w;
 
 	if (filename == NULL)
 		return (0);
@@ -26,7 +26,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	if (bytes_read < letters)
+	if (bytes_read < (size_t)letters)
 		bytes_print = bytes_read;
 
 	else
@@ -39,6 +39,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		close(fd);
 		return (0);
 	}
+
+	total_count += bytes_print;
+	letters -= bytes_print;
 
 	close(fd);
 	return (total_count);
