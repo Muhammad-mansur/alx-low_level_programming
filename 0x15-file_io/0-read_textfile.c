@@ -26,22 +26,27 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	if (bytes_read < (size_t)letters)
-		bytes_print = bytes_read;
-
-	else
-		bytes_print = letters;
-
-	bytes_w = write(STDOUT_FILENO, buff, bytes_print);
-
-	if (bytes_w != bytes_print)
+	while (letters > 0)
 	{
-		close(fd);
-		return (0);
-	}
+		bytes_read = read(fd, buff, sizeof(buff));
+		if (bytes_read <= 0)
+			break;
 
-	total_count += bytes_print;
-	letters -= bytes_print;
+		if (bytes_read < (size_t)letters)
+			bytes_print = bytes_read;
+		else
+			bytes_print = letters;
+
+		bytes_w = write(STDOUT_FILENO, buff, bytes_print);
+		if (bytes_w != bytes_print)
+		{
+			close(fd);
+			return (0);
+		}
+
+		total_count += bytes_print;
+		letters -= bytes_print;
+	}
 
 	close(fd);
 	return (total_count);
