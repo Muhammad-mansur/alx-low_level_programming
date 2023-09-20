@@ -39,7 +39,7 @@ int main(void)
 void apt(void)
 {
 	if (isatty(STDIN_FILENO))
-		printf("$ ");
+		printf("($) ");
 }
 
 

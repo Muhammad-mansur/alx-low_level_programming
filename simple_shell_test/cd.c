@@ -9,7 +9,7 @@ void cd_cmd(const char *dir)
 {
 	char newDir[MAX_LEN];
 	char *prevDir = getenv("OLDPWD");
-	char *curDir = getcwd((NULL, 0);
+	char *curDir = getcwd(NULL, 0);
 
 	if (dir == NULL || strcmp(dir, "-") == 0)
 	{
@@ -43,3 +43,46 @@ void cd_cmd(const char *dir)
 	setenv("OLDPWD", curDir, 1);
 	free(curDir);
 }
+
+/**
+  * main - entry point
+  * @argc: argument count
+  * @argv: argument vector
+  * Return: 0 always
+  */
+
+int main(int argc, char *argv[])
+{
+	const char *home = getenv("HOME");
+
+	if (argc == 1)
+	{
+		if (home == NULL)
+		{
+			fprintf(stderr, "HOME environment variable not set.\n");
+			return (1);
+		}
+		cd_cmd(home);
+	}
+
+	else if (argc == 2)
+	{
+		cd_cmd(argv[1]);
+	}
+	else
+	{
+		fprintf(stderr, "Usage: %s [DIRECTORY]\n", argv[0]);
+		return (1);
+	}
+
+	return (0);
+}
+
+
+
+
+
+
+
+
+
