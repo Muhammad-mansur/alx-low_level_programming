@@ -8,6 +8,7 @@
 #include <sys/wait.h>
 
 #define MAX_INPUT 1024
+#define MAX_LEN 100
 
 extern char **environ;
 
