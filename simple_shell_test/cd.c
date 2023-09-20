@@ -45,13 +45,13 @@ void cd_cmd(const char *dir)
 }
 
 /**
-  * main - entry point
+  * test - entry point
   * @argc: argument count
   * @argv: argument vector
   * Return: 0 always
   */
 
-int main(int argc, char *argv[])
+int test(int argc, char *argv[])
 {
 	const char *home = getenv("HOME");
 
